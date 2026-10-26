@@ -1,0 +1,28 @@
+--- 2026-10-26 19:25:19 ---
+               total        used        free      shared  buff/cache   available
+Mem:           705Mi       210Mi        53Mi       2.0Mi       441Mi       375Mi
+Swap:          767Mi        46Mi       721Mi
+Filesystem                   Size  Used Avail Use% Mounted on
+tmpfs                         71M  1.2M   70M   2% /run
+/dev/vda1                    8.8G  5.7G  2.7G  69% /
+tmpfs                        353M     0  353M   0% /dev/shm
+tmpfs                        5.0M     0  5.0M   0% /run/lock
+/dev/md0                     463M   24K  427M   1% /mnt/raid
+/dev/mapper/vg_data-lv_logs  172M   19M  139M  12% /mnt/logs
+overlay                      8.8G  5.7G  2.7G  69% /var/lib/docker/rootfs/overlayfs/fbe3950fa4cadcb377b6d5e589fae54df68158511edd236c020cdaf644476166
+tmpfs                         71M  4.0K   71M   1% /run/user/0
+ 19:25:19 up 2 days,  2:33,  1 user,  load average: 0.00, 0.00, 0.00
+--- 2026-10-26 19:25:24 ---
+               total        used        free      shared  buff/cache   available
+Mem:           705Mi       210Mi        53Mi       2.0Mi       441Mi       375Mi
+Swap:          767Mi        46Mi       721Mi
+Filesystem                   Size  Used Avail Use% Mounted on
+tmpfs                         71M  1.2M   70M   2% /run
+/dev/vda1                    8.8G  5.7G  2.7G  69% /
+tmpfs                        353M     0  353M   0% /dev/shm
+tmpfs                        5.0M     0  5.0M   0% /run/lock
+/dev/md0                     463M   24K  427M   1% /mnt/raid
+/dev/mapper/vg_data-lv_logs  172M   19M  139M  12% /mnt/logs
+overlay                      8.8G  5.7G  2.7G  69% /var/lib/docker/rootfs/overlayfs/fbe3950fa4cadcb377b6d5e589fae54df68158511edd236c020cdaf644476166
+tmpfs                         71M  4.0K   71M   1% /run/user/0
+ 19:25:24 up 2 days,  2:33,  1 user,  load average: 0.00, 0.00, 0.00

@@ -9,6 +9,13 @@ fi
 PROJECT_DIR=$(cd "$(dirname "$0")" && pwd)
 export DEBIAN_FRONTEND=noninteractive
 
+if [ ! -s /etc/ssl/certs/my-app.crt ] || [ ! -s /etc/ssl/private/my-app.key ]; then
+    openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+        -keyout /etc/ssl/private/my-app.key \
+        -out /etc/ssl/certs/my-app.crt \
+        -subj "/CN=my-app.local"
+fi
+
 apt-get update
 apt-get install -y docker.io mdadm lvm2 nginx curl
 systemctl enable --now docker
@@ -64,13 +71,6 @@ if ! mountpoint -q /mnt/logs; then
         mkfs.ext4 /dev/vg_data/lv_logs
     fi
     mount /dev/vg_data/lv_logs /mnt/logs
-fi
-
-if [ ! -s /etc/ssl/certs/my-app.crt ] || [ ! -s /etc/ssl/private/my-app.key ]; then
-    openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
-        -keyout /etc/ssl/private/my-app.key \
-        -out /etc/ssl/certs/my-app.crt \
-        -subj "/CN=my-app.local"
 fi
 
 install -m 644 "$PROJECT_DIR/my-app.conf" /etc/nginx/sites-available/my-app

@@ -9,6 +9,9 @@ while true; do
         free -h
         df -h
         uptime
-    } >> "$LOG_FILE"
+    } >> "$LOG_FILE" || {
+        echo "Не удалось записать $LOG_FILE" >&2
+        exit 1
+    }
     sleep "$INTERVAL"
 done
